@@ -1,7 +1,7 @@
 # Orangefs on Ubuntu
 Deploy PVFS orangefs on Ubuntu16.04
 
-Add client and server will add later
+Add client and server will update later
 
 ### Download&unpack
 The source code we can get from http://www.orangefs.org/
