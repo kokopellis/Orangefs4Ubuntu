@@ -50,6 +50,10 @@ tcp://192.168.56.101:3334/orangefs /mnt/orangefs  pvfs2 defaults 0 0
 ```bash
 /opt/orangefs/sbin/pvfs2-server  /opt/orangefs/etc/orangefs.conf -a 192.168.56.101
 ```
+### Start Client
+```bash
+/opt/sbin/pvfs-client
+```
 
 ### Mount orangefs
 ```bash
@@ -72,8 +76,8 @@ if we use root user, we would give a root ssh login permit by modify /etc/sshd.c
 ```
   243  rm -rf /opt/orangefs/storage/*
   244  ./pvfs2-server -f /opt/orangefs/etc/orangefs.conf -a 192.168.56.101
-  245  rm -rf /mnt/orangefs/ ###(Important!!!)
-  246  mkdir /mnt/orangefs   ###(Important!!!) mount error always occured, re-create a mnt dir problem solved.
+  245  rm -rf /mnt/orangefs/ 
+  246  mkdir /mnt/orangefs   #mark
   247  ./pvfs2-server  /opt/orangefs/etc/orangefs.conf -a 192.168.56.101
   248  ps aux |grep pvfs2
   249  ps aux |grep pvfs2-server
