@@ -1,7 +1,7 @@
 # Orangefs on Ubuntu
 Deploy PVFS orangefs on Ubuntu16.04
 
-Add client and server will update later
+Add server will update later
 
 ### Download&unpack
 The source code we can get from http://www.orangefs.org/
@@ -82,4 +82,16 @@ if we use root user, we would give a root ssh login permit by modify /etc/sshd.c
   248  ps aux |grep pvfs2
   249  ps aux |grep pvfs2-server
   250  mount -t pvfs2 tcp://192.168.56.101:3334/orangefs /mnt/orangefs/
+```
+
+
+### Add a client
+```bash
+scp -r 192.168.56.101:/opt/orangefs /opt/
+modprobe orangefs
+vim /etc/pvfs2tab
+/opt/orangefs/sbin/pvfs2-client -p /opt/orangefs/sbin/pvfs2-client-core
+mkdir /mnt/orangefs
+/opt/orangefs/bin/pvfs2-ping -m /mnt/orangefs
+mount -t pvfs2 tcp://192.168.56.101:3334/orangefs /mnt/orangefs
 ```
