@@ -34,6 +34,7 @@ make && make install
 ```bash
 /opt/orangefs/bin/genconfig /opt/orangfs/etc/orangefs-server.conf
 ```
+One default setting is localhost, in there we use our ip address.
 
 ### Create /etc/pvfs2tab
 ```
