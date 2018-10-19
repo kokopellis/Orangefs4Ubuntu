@@ -35,8 +35,8 @@ make && make install
 /opt/orangefs/bin/genconfig /opt/orangfs/etc/orangefs-server.conf
 ```
 
-## Create /etc/pvfs2tab
-```bash
+### Create /etc/pvfs2tab
+```
 tcp://192.168.56.101:3334/orangefs /mnt/orangefs  pvfs2 defaults 0 0
 ```
 
@@ -68,12 +68,13 @@ if we use root user, we would give a root ssh login permit by modify /etc/sshd.c
 ```
 
 ### Some installation logs
+```
   243  rm -rf /opt/orangefs/storage/*
   244  ./pvfs2-server -f /opt/orangefs/etc/orangefs.conf -a 192.168.56.101
-  245  rm -rf /mnt/orangefs/ #####(Important!!!)
-  246  mkdir /mnt/orangefs   #####(Important!!!) mount error always occured, re-create a mnt dir problem solved.
+  245  rm -rf /mnt/orangefs/ ###(Important!!!)
+  246  mkdir /mnt/orangefs   ###(Important!!!) mount error always occured, re-create a mnt dir problem solved.
   247  ./pvfs2-server  /opt/orangefs/etc/orangefs.conf -a 192.168.56.101
   248  ps aux |grep pvfs2
   249  ps aux |grep pvfs2-server
   250  mount -t pvfs2 tcp://192.168.56.101:3334/orangefs /mnt/orangefs/
-
+```
