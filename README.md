@@ -22,11 +22,13 @@ apt install -y gcc flex bison libssl-dev libdb-dev linux-source perl make autoco
 mkdir /opt/orangfs
 ./configure --prefix=/opt/orangefs --enable-shared --with-db-backend=lmdb
 make && make install
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/orangefs/lib' >> /etc/bash.bashrc
 ```
 
 ### Insert kernal module
 ```bash
    lsmod |grep -i orange
+   echo "orangefs" >> /etc/modules
    modprobe orangefs
 ```
 
