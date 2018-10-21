@@ -1,7 +1,5 @@
 # Orangefs on Ubuntu
-Deploy PVFS orangefs on Ubuntu16.04
-
-Add server will update later
+Quick instruction for deploy PVFS orangefs on Ubuntu16.04
 
 ### Download&unpack
 The source code we can get from http://www.orangefs.org/
@@ -97,3 +95,8 @@ mkdir /mnt/orangefs
 /opt/orangefs/bin/pvfs2-ping -m /mnt/orangefs
 mount -t pvfs2 tcp://192.168.56.101:3334/orangefs /mnt/orangefs
 ```
+
+### Multi Server Single File System
+See the offical doc in Chapter Advanced Configuration **Multiple Server Processes**
+
+More details will update later
