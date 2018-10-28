@@ -77,5 +77,5 @@ Create and start cluster on one of the virtual machine
 ```
 
 ### Do some test
-   redis-cli -c -h 192.168.56.102 -p 7003
+    redis-cli -c -h 192.168.56.102 -p 7003
 
