@@ -2,7 +2,7 @@
 
 This is a brief instruction for deploy redis cluster on Ubuntu 16.04 for test.  
 I used two virtual machine which ip address is 192.168.56.101, 192.168.56.102.  
-There are at least 3 nodes in redis cluster. So I started two redis process on each virtual machine.
+There are at least 3 nodes in redis cluster. So I started two redis processes on each virtual machine.
 
 ### Prerequistie Installation
 Finish this on all the virtual machine
