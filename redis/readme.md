@@ -1,4 +1,4 @@
-# Redis Cluster Deployment
+# Redis Cluster Deployment & YCSB Benchmark
 
 This is a brief instruction for deploy redis cluster on Ubuntu 16.04 for test.  
 I used two virtual machine which ip address is 192.168.56.101, 192.168.56.102.  
