@@ -80,3 +80,18 @@ Create and start cluster on one of the virtual machine
 ### Do some test
     redis-cli -c -h 192.168.56.102 -p 7003
 
+
+### YCSB benchmark
+```bash
+add-apt-repository ppa:webupd8team/java
+apt install maven oracle-java8-installer
+git clone http://github.com/brianfrankcooper/YCSB.git
+cd YCSB
+mvn -pl com.yahoo.ycsb:redis-binding -am clean package
+cp ./workload/workloada ./workload/workloada-redis
+echo "redis.host=192.168.56.101">> ./workload/workloada-redis
+echo "redis.port=7001">> ./workload/workloada-redis
+echo "redis.cluster=true">> ./workload/workloada-redis
+./bin/ycsb load redis -s -threads 20 -P workloads/workloada-redis >/redis-shared/ycsbload.txt 
+./bin/ycsb run redis -s -threads 20 -P workloads/workloada-redis >/redis-shared/ycsbrun.txt 
+```
